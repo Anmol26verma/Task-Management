@@ -1,17 +1,24 @@
 export type TaskT = {
 	id: string;
-	title: string;
+	tags: { title: string; };
 	description: string;
-	priority: string;
-	deadline: number;
-	image?: string;
-	alt?: string;
-	tags: { title: string; bg: string; text: string }[];
+	users: User[];
 };
 
 type Column = {
 	name: string;
+	num: string;
 	items: TaskT[];
+};
+
+interface User {
+    id: string;
+    name: string;
+    avatar: string; // URL or path to the avatar image
+}
+
+export type Users = {
+	[key: string]: User;
 };
 
 export type Columns = {

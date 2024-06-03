@@ -1,129 +1,144 @@
 import { v4 as uuidv4 } from "uuid";
-import taskImage from "../assets/images/task.jpg";
-import taskImage2 from "../assets/images/task2.jpg";
-import taskImage3 from "../assets/images/task3.jpg";
 import { Columns } from "../types";
-import { getRandomColors } from "../helpers/getRandomColors";
 
 export const Board: Columns = {
 	backlog: {
-		name: "Backlog",
+		name: "Backlog Tasks",
+		num : '5',
 		items: [
 			{
 				id: uuidv4(),
-				title: "Admin Panel Front-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "medium",
-				deadline: 50,
-				image: taskImage2,
-				alt: "task image",
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 			{
 				id: uuidv4(),
-				title: "Admin Panel Back-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "low",
-				deadline: 50,
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
-			},
-		],
-	},
-	pending: {
-		name: "Pending",
-		items: [
-			{
-				id: uuidv4(),
-				title: "Admin Panel Back-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "high",
-				deadline: 50,
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 			{
 				id: uuidv4(),
-				title: "Admin Panel Front-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "low",
-				deadline: 50,
-				image: taskImage,
-				alt: "task image",
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 		],
 	},
 	todo: {
-		name: "To Do",
+		name: "To Do Tasks",
+		num : '3',
 		items: [
 			{
 				id: uuidv4(),
-				title: "Admin Panel Front-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "medium",
-				deadline: 50,
-				image: taskImage3,
-				alt: "task image",
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+			},
+			{
+				id: uuidv4(),
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 		],
 	},
-	doing: {
-		name: "Doing",
+	pending: {
+		name: "In Process",
+		num : '2',
 		items: [
 			{
 				id: uuidv4(),
-				title: "Admin Panel Front-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "low",
-				deadline: 50,
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 			{
 				id: uuidv4(),
-				title: "Admin Panel Back-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "medium",
-				deadline: 50,
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 		],
 	},
 	done: {
 		name: "Done",
+		num : '5',
 		items: [
 			{
 				id: uuidv4(),
-				title: "Admin Panel Front-end",
-				description: "Lorem ipsum dolor sit amet ..",
-				priority: "high",
-				deadline: 50,
-				image: taskImage,
-				alt: "task image",
-				tags: [
-					{ title: "Test", ...getRandomColors() },
-					{ title: "Front", ...getRandomColors() },
-				],
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
+			},
+			{
+				id: uuidv4(),
+				tags: {
+					title: "Task",
+				},
+				description: "Brainstroming brings team members diverse experience into play",
+				users : [ 
+					{ id: '1', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=1' },
+					{ id: '2', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=2' },
+					{ id: '3', name: 'Anmol', avatar: 'https://i.pravatar.cc/300?img=3' },
+				]
+
 			},
 		],
 	},

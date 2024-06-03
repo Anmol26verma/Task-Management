@@ -1,8 +1,9 @@
+
+
 interface Color {
 	bg: string;
 	text: string;
 }
-
 const colors: { [key: string]: Color } = {
 	red: { bg: "#fee2e2", text: "#dc2626" },
 	rose: { bg: "#ffe4e6", text: "#e11d48" },
