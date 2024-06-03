@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage, faPaperclip, faTrash } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { TaskT } from "../../types";
 
 interface TaskProps {
