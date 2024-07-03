@@ -28,6 +28,7 @@ const Home = () => {
 	const handleAddTask = (taskData: any) => {
 		const newBoard = { ...columns };
 		newBoard[selectedColumn].items.push(taskData);
+		setColumns(newBoard);
 	};
 
 	return (
@@ -43,46 +44,38 @@ const Home = () => {
 								droppableId={columnId}
 								key={columnId}
 							>
-								{(provided: any) => (
+								{(provided: any, snapshot: any) => (
 									<div
 										ref={provided.innerRef}
 										{...provided.droppableProps}
-										className="flex flex-col md:w-[290px] w-[250px] gap-3 items-center py-5"
+										className={`task-container ${snapshot.isDraggingOver ? "dragging-over" : ""} flex flex-col md:w-[290px] w-[250px] gap-3 items-center py-5`}
 									>
-										<div className="flex items-center justify-between py-[10px] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]" style={{fontWeight: "bold",}}>
-											<span style={{marginLeft: "10px", }}>{column.name}</span>
-											<span style={{marginLeft: "5px", marginRight: "10px", width: "fit-content", height: "20px", color: getRandomColors().text , background: getRandomColors().bg , borderRadius: "50%", padding: "0 5px" , boxShadow: " rgba(0, 0, 0, 0.1)"}}>{column.num}</span>
-											<FontAwesomeIcon icon={faEllipsis} 
-												color={"#999"}
-												style={{marginLeft: "auto", marginRight: "10px"}}
-
-											/>
+										<div className="flex items-center justify-between py-[10px] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]" style={{ fontWeight: "bold" }}>
+											<span style={{ marginLeft: "10px" }}>{column.name}</span>
+											<span style={{ marginLeft: "5px", marginRight: "10px", width: "fit-content", height: "20px", color: getRandomColors().text, background: getRandomColors().bg, borderRadius: "50%", padding: "0 5px", boxShadow: "rgba(0, 0, 0, 0.1)" }}>{column.num}</span>
+											<FontAwesomeIcon icon={faEllipsis} color={"#999"} style={{ marginLeft: "auto", marginRight: "10px" }} />
 										</div>
 										<div
 											onClick={() => openModal(columnId)}
 											className="flex cursor-pointer items-center justify-center gap-1 py-[10px] md:w-[100%] w-full opacity-90 bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]"
 											style={{ background: "#F5F8FF", border: "1px solid lightgray" }}
 										>
-											<AddOutline color={"#555"} 
-												width="20px"
-												height="20px"
-
-											/>
-											
+											<AddOutline color={"#555"} width="20px" height="20px" />
 										</div>
 										{column.items.map((task: any, index: any) => (
-											<Draggable
-												key={task.id.toString()}
-												draggableId={task.id.toString()}
-												index={index}
-											>
-												{(provided: any) => (
-													<>
+											<Draggable key={task.id.toString()} draggableId={task.id.toString()} index={index}>
+												{(provided: any, snapshot: any) => (
+													<div
+														ref={provided.innerRef}
+														{...provided.draggableProps}
+														{...provided.dragHandleProps}
+														className={`task ${snapshot.isDragging ? "dragging" : ""}`}
+													>
 														<Task
 															provided={provided}
 															task={task}
 														/>
-													</>
+													</div>
 												)}
 											</Draggable>
 										))}
@@ -90,7 +83,6 @@ const Home = () => {
 									</div>
 								)}
 							</Droppable>
-							
 						</div>
 					))}
 				</div>
