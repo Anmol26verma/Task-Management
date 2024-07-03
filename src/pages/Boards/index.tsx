@@ -87,7 +87,6 @@ const Home = () => {
 					))}
 				</div>
 			</DragDropContext>
-
 			<AddModal
 				isOpen={modalOpen}
 				onClose={closeModal}
